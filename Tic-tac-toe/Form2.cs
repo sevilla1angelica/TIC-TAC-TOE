@@ -28,6 +28,7 @@ namespace Tic_tac_toe
             btn7.Enabled = true;
             btn8.Enabled = true;
             btn9.Enabled = true;
+
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -117,13 +118,24 @@ namespace Tic_tac_toe
                 win = true;
             }
 
-            //allbtn function would tell the winning check as a draw.
+            // would tell the winning check as a draw.
             counter = counter + 1;
             if(counter==9)
             {
                 textBox1.Text = " No one won :< ";
                 MessageBox.Show(" Aww, it's a draw >,< ");
                 counter= 0;
+
+                btn1.Enabled = false;
+                btn2.Enabled = false;
+                btn3.Enabled = false;
+                btn4.Enabled = false;
+                btn5.Enabled = false;
+                btn6.Enabled = false;
+                btn7.Enabled = false;
+                btn8.Enabled = false;
+                btn9.Enabled = false;
+
             }
 
         }
@@ -156,15 +168,6 @@ namespace Tic_tac_toe
             textBox1.Text = b1.Text + " You Won! :>";
             MessageBox.Show(" You Won! Good job!");
           
-            btn1.Enabled = false;
-            btn2.Enabled = false;
-            btn3.Enabled = false;
-            btn4.Enabled = false;
-            btn5.Enabled = false;
-            btn6.Enabled = false;
-            btn7.Enabled = false;
-            btn8.Enabled = false;
-            btn9.Enabled = false;
         }
 
         private void btn11_Click(object sender, EventArgs e)
