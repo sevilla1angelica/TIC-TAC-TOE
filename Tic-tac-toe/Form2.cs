@@ -48,8 +48,69 @@ namespace Tic_tac_toe
                 }
 
                 XorO++;
-
             }
         }
+        bool win = false;
+        public void Winnercheck()
+        {
+            //horizontal winning check
+            if (!btn1.Text.Equals("") && btn1.Text.Equals(btn2.Text) && btn1.Text.Equals(btn3.Text))
+            {
+                win = true;
+            }
+            if (!btn4.Text.Equals("") && btn4.Text.Equals(btn5.Text) && btn4.Text.Equals(btn6.Text))
+            {
+                win = true;
+            }
+            if (!btn7.Text.Equals("") && btn7.Text.Equals(btn8.Text) && btn7.Text.Equals(btn9.Text))
+            {
+                win = true;
+            }
+
+            //vertical winning check
+            if (!btn1.Text.Equals("") && btn1.Text.Equals(btn4.Text) && btn1.Text.Equals(btn7.Text))
+            {
+                win = true;
+            }
+            if (!btn2.Text.Equals("") && btn2.Text.Equals(btn5.Text) && btn2.Text.Equals(btn8.Text))
+            {
+                win = true;
+            }
+            if (!btn3.Text.Equals("") && btn3.Text.Equals(btn6.Text) && btn3.Text.Equals(btn9.Text))
+            {
+                win = true;
+            }
+
+            //diagonal winning check
+            if (!btn1.Text.Equals("") && btn1.Text.Equals(btn5.Text) && btn1.Text.Equals(btn9.Text))
+            {
+                win = true;
+            }
+            if (!btn3.Text.Equals("") && btn3.Text.Equals(btn5.Text) && btn3.Text.Equals(btn7.Text))
+            {
+                win = true;
+            }
+            //button text length function would tell the winning check as a draw.
+            if (AllBtnLength() == 9 && win == false)
+            {
+                textBox1.Text = " No one won :< ";
+                MessageBox.Show(" Aww, it's a draw >,< ");
+            }
+
+        }
+        // get all button text length function -> return int
+        public int AllBtnLength()
+        {
+            int allTextButtonsLength = 0;
+            foreach (Control c in Controls)
+            {
+                if (c is Button)
+                {
+                    allTextButtonsLength += c.Text.Length;
+                }
+            }
+            return allTextButtonsLength;
+        }
+
     }
 }
