@@ -59,5 +59,14 @@ namespace Tic_tac_toe.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Mouse_Click_Sound_Effect {
+            get {
+                return ResourceManager.GetStream("Mouse_Click_Sound_Effect", resourceCulture);
+            }
+        }
     }
 }

@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Tic_tac_toe
 {
     public partial class Form2 : Form
     {
+        SoundPlayer Soundeffect = new SoundPlayer(@"C:\Users\HP\OneDrive\Desktop\C# Programs\2nd Program\Tic-tac-toe\Resources\Mouse Click Sound Effect.wav");
+
         int counter = 0;
 
 
@@ -28,7 +31,6 @@ namespace Tic_tac_toe
             btn7.Enabled = true;
             btn8.Enabled = true;
             btn9.Enabled = true;
-
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -124,6 +126,7 @@ namespace Tic_tac_toe
             {
                 textBox1.Text = " No one won :< ";
                 MessageBox.Show(" Aww, it's a draw >,< ");
+               
                 counter= 0;
 
                 btn1.Enabled = false;
@@ -135,7 +138,6 @@ namespace Tic_tac_toe
                 btn7.Enabled = false;
                 btn8.Enabled = false;
                 btn9.Enabled = false;
-
             }
 
         }
@@ -167,11 +169,22 @@ namespace Tic_tac_toe
 
             textBox1.Text = b1.Text + " You Won! :>";
             MessageBox.Show(" You Won! Good job!");
-          
+
+            btn1.Enabled = false;
+            btn2.Enabled = false;
+            btn3.Enabled = false;
+            btn4.Enabled = false;
+            btn5.Enabled = false;
+            btn6.Enabled = false;
+            btn7.Enabled = false;
+            btn8.Enabled = false;
+            btn9.Enabled = false;
         }
 
         private void btn11_Click(object sender, EventArgs e)
         {
+            Soundeffect.Play();
+
             Application.Restart();
             Environment.Exit(0);
         }
@@ -181,6 +194,8 @@ namespace Tic_tac_toe
             Form2 form2 = new Form2();
             form2.Show();
             Visible = false;
+
+            Soundeffect.Play();
         }
     }
 }
