@@ -18,5 +18,12 @@ namespace Tic_tac_toe
             MessageBox.Show("In order for the player to win, it is a must to succeed in markering three cells in a straight line at any direction (by horizonally, vertically, and diagobally)." +
                 " Have fun playing!");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+            Visible=false;
+        }
     }
 }
