@@ -90,6 +90,19 @@ namespace Tic_tac_toe
                 winlayout(btn3, btn6, btn9);
                 win = true;
             }
+
+            //diagonal winning check
+            if (!btn1.Text.Equals("") && btn1.Text.Equals(btn5.Text) && btn1.Text.Equals(btn9.Text))
+            {
+                winlayout(btn1, btn5, btn9);
+                win = true;
+            }
+            if (!btn3.Text.Equals("") && btn3.Text.Equals(btn5.Text) && btn3.Text.Equals(btn7.Text))
+            {
+                winlayout(btn3, btn5, btn7);
+                win = true;
+            }
+
         }
         // get all button text length function -> return int
         public int AllBtnLength()
