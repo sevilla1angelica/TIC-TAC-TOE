@@ -54,6 +54,7 @@ namespace Tic_tac_toe
                 XorO++;
             }
         }
+
         bool win = false;
         public void Winnercheck()
         {
@@ -103,20 +104,29 @@ namespace Tic_tac_toe
                 win = true;
             }
 
-        }
-        // get all button text length function -> return int
-        public int AllBtnLength()
-        {
-            int allTextButtonsLength = 0;
-            foreach (Control c in Controls)
+            //allbtn function would tell the winning check as a draw.
+            if(Allbtn() == 9 && win == false)
             {
-                if (c is Button)
+                textBox1.Text = " No one won :< ";
+                MessageBox.Show(" Aww, it's a draw >,< ");
+            }
+
+        }
+
+
+        public int Allbtn()
+        {
+            int Allbtn = 0;
+            foreach (Control control in Controls)
+            {
+                if (control is Button)
                 {
-                    allTextButtonsLength += c.Text.Length;
+                    Allbtn += control.Text.Length;
                 }
             }
-            return allTextButtonsLength;
+            return Allbtn;
         }
+
         // win layout function is added for easier view of the Player's winning line
         public void winlayout(Button b1, Button b2, Button b3)
         {
@@ -132,5 +142,15 @@ namespace Tic_tac_toe
             MessageBox.Show(" You Won! Good job!");
         }
 
+        private void btn11_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btn10_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+            Visible = false;
+        }
     }
 }
