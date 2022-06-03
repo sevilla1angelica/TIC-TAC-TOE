@@ -144,6 +144,8 @@ namespace Tic_tac_toe
 
         private void btn11_Click(object sender, EventArgs e)
         {
+            Application.Restart();
+            Environment.Exit(0);
         }
 
         private void btn10_Click(object sender, EventArgs e)
